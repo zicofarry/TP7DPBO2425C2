@@ -1,0 +1,240 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); /* Import font Inter */
+
+body {
+    /* Mengganti font family */
+    font-family: 'Inter', 'Poppins', sans-serif; 
+    background-color: #f4f7fa; /* Latar belakang lebih lembut */
+    color: #334155;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Shadow sedikit lebih jelas */
+    border-radius: 12px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 25px;
+    font-weight: 700; /* Font lebih tebal untuk judul */
+}
+
+/* --- Menu Utama (Card Styling) --- */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 25px;
+    background-color: #ffffff; /* Latar belakang card putih */
+    color: #1e293b;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Shadow ringan pada card */
+}
+
+.menu a:hover {
+    background-color: #4f46e5; /* Warna ungu/biru yang menarik */
+    color: white;
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.4);
+    transform: translateY(-5px); /* Efek angkat yang lebih menonjol */
+}
+
+/* --- Tabel Styling --- */
+table {
+    width: 100%;
+    margin: 25px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    /* Menghapus border-bottom agar fokus pada warna baris */
+}
+
+table th {
+    background-color: #eef2ff; /* Warna header lebih cerah */
+    color: #4338ca; /* Warna teks header */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* 1. Zebra Striping (Baris Genap/Even Rows) */
+table tr:nth-child(even) {
+    background-color: #f8fafc; /* Warna abu-abu sangat muda */
+}
+
+/* Baris Ganjil (Odd Rows) tetap menggunakan background default (putih) */
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* 2. Hover Effect */
+table tr:hover {
+    background-color: #e0f2fe !important; /* Warna biru muda saat dihover */
+    cursor: pointer;
+    box-shadow: inset 3px 0 0 0 #3b82f6; /* Garis biru di kiri */
+}
+/* Memastikan header tidak terpengaruh hover */
+table th:hover {
+    background-color: #eef2ff !important;
+    cursor: default;
+    box-shadow: none;
+}
+
+
+/* --- Tombol Aksi dan Navigasi --- */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.add-btn, .back-btn, .edit-btn, .delete-btn, button, input[type="submit"] {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 5px 0;
+}
+
+.add-btn {
+    float: right;
+    background-color: #22c55e; /* Hijau */
+    color: white;
+}
+
+.add-btn:hover {
+    background-color: #16a34a;
+    box-shadow: 0 4px 8px rgba(34, 197, 94, 0.3);
+}
+
+.back-btn {
+    background-color: #64748b; 
+    color: white;
+    margin-right: 15px;
+    float: left;
+}
+
+.back-btn:hover {
+    background-color: #475569;
+}
+
+.edit-btn {
+    background-color: #3b82f6; /* Biru */
+    color: white;
+    font-size: 0.9em;
+    padding: 6px 12px;
+}
+
+.edit-btn:hover {
+    background-color: #2563eb;
+}
+
+.delete-btn {
+    background-color: #ef4444; /* Merah */
+    color: white;
+    font-size: 0.9em;
+    padding: 6px 12px;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #4f46e5;
+    color: white;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 1.1em;
+}
+
+button[type="submit"]:hover {
+    background-color: #4338ca;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+/* --- Form Styling (sedikit disempurnakan) --- */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #f9faff; /* Latar belakang form sangat muda */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #475569;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Clear float untuk tombol back dan add */
+.header-actions {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color: #64748b;
+    margin-top: 30px;
+}
