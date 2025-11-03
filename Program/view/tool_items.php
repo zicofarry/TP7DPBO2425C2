@@ -55,6 +55,60 @@ switch($action){
         <?php
         break;
 
+    case 'edit':
+        $id = $_GET['id'];
+        $data = $toolItem->getById($id);
+        $types = $toolType->readAll(); // Ambil semua tool types untuk dropdown
+
+        if($_SERVER['REQUEST_METHOD']==='POST'){
+            $toolItem->id = $id;
+            $toolItem->tool_type_id = $_POST['tool_type_id'];
+            $toolItem->serial = $_POST['serial'];
+            $toolItem->condition = $_POST['condition'];
+            $toolItem->status = $_POST['status'];
+            $toolItem->update();
+            header('Location: tool_items.php');
+        }
+        ?>
+        <h2>Edit Tool Item</h2>
+        <a href="tool_items.php" class="back-btn">← Kembali</a>
+        <form method="POST">
+            <label>Tool Type:</label>
+            <select name="tool_type_id">
+                <?php foreach($types as $t): ?>
+                <option value="<?= $t['id'] ?>" <?= $data['tool_type_id']==$t['id']?'selected':'' ?>><?= $t['name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+
+            <label>Serial:</label>
+            <input type="text" name="serial" required value="<?= $data['serial'] ?>">
+
+            <label>Condition:</label>
+            <select name="condition">
+                <option value="baik" <?= $data['condition']=='baik'?'selected':'' ?>>Baik</option>
+                <option value="rusak" <?= $data['condition']=='rusak'?'selected':'' ?>>Rusak</option>
+                <option value="hilang" <?= $data['condition']=='hilang'?'selected':'' ?>>Hilang</option>
+            </select>
+
+            <label>Status:</label>
+            <select name="status">
+                <option value="available" <?= $data['status']=='available'?'selected':'' ?>>Available</option>
+                <option value="borrowed" <?= $data['status']=='borrowed'?'selected':'' ?>>Borrowed</option>
+                <option value="unavailable" <?= $data['status']=='unavailable'?'selected':'' ?>>Unavailable</option>
+            </select>
+
+            <button type="submit">Update</button>
+        </form>
+        <?php
+        break;
+
+    case 'delete':
+        $id = $_GET['id'];
+        $toolItem->id = $id;
+        $toolItem->delete();
+        header('Location: tool_items.php');
+        break;
+
     default:
         $items = $toolItem->readAll();
         ?>

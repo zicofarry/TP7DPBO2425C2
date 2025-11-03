@@ -50,6 +50,9 @@ Main
 │   ├── config/
 │   │   └── Database.php
 │   │
+│   ├── database/
+│   │   └── lab_loan.sql
+│   │
 │   ├── view/
 │   │   ├── borrow_records.php
 │   │   ├── tool_items.php
@@ -115,3 +118,4 @@ Main
 ```
 
 # Dokumentasi
+https://github.com/user-attachments/assets/2a3f1b4c-4444-469d-a0d9-1bab8fa916b5
