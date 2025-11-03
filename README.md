@@ -1,11 +1,11 @@
 # Janji
 Saya Muhammad 'Azmi Salam dengan NIM 2406010 mengerjakan Tugas Praktikum 7 pada Mata Kuliah Desain dan Pemrograman Berorientasi Objek (DPBO) untuk keberkahan-Nya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin
 
-# 🛠️ Lab Tool Borrowing System (Sistem Peminjaman Alat Lab)
+# Lab Tool Borrowing System (Sistem Peminjaman Alat Lab)
 
 Sistem berbasis PHP sederhana untuk mengelola inventaris alat laboratorium, data pengguna, dan mencatat riwayat peminjaman/pengembalian.
 
-## 🌟 Fitur Utama
+# Fitur Utama
 
 Sistem ini menyediakan fungsionalitas CRUD (Create, Read, Update, Delete) lengkap untuk empat entitas utama:
 
@@ -14,55 +14,62 @@ Sistem ini menyediakan fungsionalitas CRUD (Create, Read, Update, Delete) lengka
   * **Item Alat (Tool Items):** Mencatat detail setiap unit alat, termasuk tipe, nomor seri, kondisi (`baik`, `rusak`, `hilang`), dan status (`available`, `borrowed`, `unavailable`).
   * **Catatan Peminjaman (Borrow Records):** Mencatat transaksi peminjaman alat oleh pengguna, mencakup waktu pinjam, waktu kembali, dan status (`borrowed`, `returned`).
 
-## 📁 Struktur Proyek
+# Struktur Proyek
 
 Proyek ini menggunakan arsitektur MVC (Model-View-Controller) yang sederhana, di mana file Class bertindak sebagai Model (logika database) dan file PHP di folder `view/` bertindak sebagai View (tampilan).
 
 ```
-.
-├── class/
-│   ├── User.php            # Kelas untuk mengelola data pengguna
-│   │   ├── create()
-│   │   ├── readAll()
-│   │   ├── getById([ID])
-│   │   ├── update()
-│   │   └── delete()
-│   ├── ToolType.php
-│   │   ├── create()
-│   │   ├── readAll()
-│   │   ├── getById([ID])
-│   │   ├── update()
-│   │   └── delete()
-│   ├── ToolItem.php        # Kelas untuk mengelola data item alat
-│   │   ├── create()
-│   │   ├── readAll()
-│   │   ├── getById([ID])
-│   │   ├── update()
-│   │   └── delete()
-│   └── BorrowRecord.php    # Kelas untuk mengelola data peminjaman
-│       ├── create()
-│       ├── readAll()
-│       ├── getById([ID])
-│       ├── update()
-│       └── delete()
+Main
+├── Program
+│   ├── class/
+│   │   ├── User.php
+│   │   │   ├── create()
+│   │   │   ├── readAll()
+│   │   │   ├── getById([ID])
+│   │   │   ├── update()
+│   │   │   └── delete()
+│   │   ├── ToolType.php
+│   │   │   ├── create()
+│   │   │   ├── readAll()
+│   │   │   ├── getById([ID])
+│   │   │   ├── update()
+│   │   │   └── delete()
+│   │   ├── ToolItem.php
+│   │   │   ├── create()
+│   │   │   ├── readAll()
+│   │   │   ├── getById([ID])
+│   │   │   ├── update()
+│   │   │   └── delete()
+│   │   └── BorrowRecord.php
+│   │       ├── create()
+│   │       ├── readAll()
+│   │       ├── getById([ID])
+│   │       ├── update()
+│   │       └── delete()
+│   │
+│   ├── config/
+│   │   └── Database.php
+│   │
+│   ├── view/
+│   │   ├── borrow_records.php
+│   │   ├── tool_items.php
+│   │   ├── tool_types.php
+│   │   └── users.php
+│   │
+│   ├── index.php
+│   └── styles.css
 │
-├── config/
-│   └── Database.php        # Konfigurasi koneksi database PDO
+├── Dokumentasi
+│   ├── Diagram.png               
+│   └── Record.mp4 
 │
-├── view/
-│   ├── borrow_records.php
-│   ├── tool_items.php
-│   ├── tool_types.php
-│   └── users.php
-│
-├── index.php               # Halaman utama dan navigasi
-└── styles.css              # Styling aplikasi
+└── README.md
 ```
 
-## Diagram
-<img src="Dokumentasi/diagram.png" style="width: 100%;"> 
+# Diagram
+<img src="Dokumentasi/Diagram.png" style="width: 100%;"> 
 
-## Database
+# Database
 
 ```sql
     CREATE DATABASE IF NOT EXISTS lab_loan;
@@ -107,4 +114,4 @@ Proyek ini menggunakan arsitektur MVC (Model-View-Controller) yang sederhana, di
 
 ```
 
-## Dokumentasi
+# Dokumentasi
